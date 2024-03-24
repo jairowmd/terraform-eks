@@ -8,6 +8,13 @@ terraform {
       version = "5.42.0"
     }
   }
+
+backend "s3" {
+    bucket = "cursodevops-eks"
+    key    = "dev/terraform.tfstate"
+    region = "us-east-1"
+  }
+
 }
 
 provider "aws" {
