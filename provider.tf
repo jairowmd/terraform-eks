@@ -4,12 +4,12 @@
 terraform {
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
       version = "5.42.0"
     }
   }
 
-backend "s3" {
+  backend "s3" {
     bucket = "cursodevops-eks"
     key    = "dev/terraform.tfstate"
     region = "us-east-1"
@@ -18,7 +18,7 @@ backend "s3" {
 }
 
 provider "aws" {
-    # Configuration options
-    region = "us-east-1"
-  
+  # Configuration options
+  region = "us-east-1"
+
 }

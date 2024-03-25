@@ -7,10 +7,10 @@ resource "aws_vpc" "eks_vpc" {
   enable_dns_support = true
   # habilita suporte a hostnames no DNS da vpc
   enable_dns_hostnames = true
-  
+
   tags = {
 
-    Name= "cursodevops-vpc"
+    Name = "cursodevops-vpc"
 
   }
 }
