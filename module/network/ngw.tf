@@ -7,7 +7,7 @@ resource "aws_eip" "eks_ngw_eip_1a" {
   # estou fazendo um merge da tag do recurso com as definidas no locals.tf
   tags = merge(
 
-    local.tags,
+    var.tags,
 
     {
 
@@ -26,7 +26,7 @@ resource "aws_eip" "eks_ngw_eip_1b" {
   # estou fazendo um merge da tag do recurso com as definidas no locals.tf
   tags = merge(
 
-    local.tags,
+    var.tags,
 
     {
 
@@ -47,7 +47,7 @@ resource "aws_nat_gateway" "eks_igw_1a" {
   # estou fazendo um merge da tag do recurso com as definidas no locals.tf
   tags = merge(
 
-    local.tags,
+    var.tags,
 
     {
 
@@ -67,7 +67,7 @@ resource "aws_nat_gateway" "eks_igw_1b" {
   # estou fazendo um merge da tag do recurso com as definidas no locals.tf
   tags = merge(
 
-    local.tags,
+    var.tags,
 
     {
 
@@ -90,7 +90,7 @@ resource "aws_route_table" "eks_private_route_table_1a" {
   # estou fazendo um merge da tag do recurso com as definidas no locals.tf
   tags = merge(
 
-    local.tags,
+    var.tags,
 
     {
 
@@ -115,7 +115,7 @@ resource "aws_route_table" "eks_private_route_table_1b" {
   # estou fazendo um merge da tag do recurso com as definidas no locals.tf
   tags = merge(
 
-    local.tags,
+    var.tags,
 
     {
 

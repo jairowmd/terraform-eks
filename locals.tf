@@ -1,3 +1,5 @@
+# estou criando variaveis nesse caso tags para utilizar em varios recursos
+
 locals {
 
   tags = {
@@ -7,6 +9,5 @@ locals {
     Environment  = "Development"
 
   }
-
 
 }

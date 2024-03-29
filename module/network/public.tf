@@ -13,7 +13,7 @@ resource "aws_subnet" "eks_subnet_public_1a" {
   # estou fazendo um merge da tag do recurso com as definidas no locals.tf
   tags = merge(
 
-    local.tags,
+    var.tags,
 
     {
 
@@ -41,7 +41,7 @@ resource "aws_subnet" "eks_subnet_public_1b" {
   # estou fazendo um merge da tag do recurso com as definidas no locals.tf
   tags = merge(
 
-    local.tags,
+    var.tags,
 
     {
 

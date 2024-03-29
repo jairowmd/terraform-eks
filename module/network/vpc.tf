@@ -11,7 +11,7 @@ resource "aws_vpc" "eks_vpc" {
   # estou fazendo um merge da tag do recurso com as definidas no locals.tf
   tags = merge(
 
-    local.tags,
+    var.tags,
 
     {
 
