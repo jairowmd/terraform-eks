@@ -1,5 +1,5 @@
 
-# criando subnet availability_zone = "us-east-1a"
+# criando subnets publicas availability_zone = "us-east-1a"
 resource "aws_subnet" "eks_subnet_public_1a" {
   vpc_id = aws_vpc.eks_vpc.id
   # informado no arquivo var o cidr de referencia para o calculo
@@ -17,7 +17,7 @@ resource "aws_subnet" "eks_subnet_public_1a" {
 
     {
 
-      Name                    = "cursodevops-pub-subnet-1a",
+      Name                    = "${var.project_name}-pub-subnet-1a",
       "kubernets.io/role/elb" = 1
 
     }
@@ -45,7 +45,7 @@ resource "aws_subnet" "eks_subnet_public_1b" {
 
     {
 
-      Name                    = "cursodevops-pub-subnet-1b",
+      Name                    = "${var.project_name}-pub-subnet-1b",
       "kubernets.io/role/elb" = 1
 
     }

@@ -16,7 +16,7 @@ resource "aws_subnet" "eks_subnet_private_1a" {
 
     {
 
-      Name                             = "cursodevops-priv-subnet-1a",
+      Name                             = "${var.project_name}-priv-subnet-1a",
       "kubernets.io/role/internal-elb" = 1
 
     }
@@ -43,7 +43,7 @@ resource "aws_subnet" "eks_subnet_private_1b" {
 
     {
 
-      Name                             = "cursodevops-priv-subnet-1b",
+      Name                             = "${var.project_name}-priv-subnet-1b",
       "kubernets.io/role/internal-elb" = 1
 
     }

@@ -15,7 +15,7 @@ resource "aws_vpc" "eks_vpc" {
 
     {
 
-      Name = "cursodevops-vpc"
+      Name = "${var.project_name}-vpc"
 
     }
 
