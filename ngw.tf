@@ -78,3 +78,51 @@ resource "aws_nat_gateway" "eks_igw_1b" {
   )
 
 }
+
+resource "aws_route_table" "eks_private_route_table_1a" {
+  vpc_id = aws_vpc.eks_vpc.id
+
+  route {
+    cidr_block     = "0.0.0.0/0"
+    nat_gateway_id = aws_nat_gateway.eks_igw_1a.id
+  }
+
+  # estou fazendo um merge da tag do recurso com as definidas no locals.tf
+  tags = merge(
+
+    local.tags,
+
+    {
+
+      Name = "${var.project_name}priv-route-table-1a"
+
+    }
+
+  )
+
+}
+
+
+
+resource "aws_route_table" "eks_private_route_table_1b" {
+  vpc_id = aws_vpc.eks_vpc.id
+
+  route {
+    cidr_block     = "0.0.0.0/0"
+    nat_gateway_id = aws_nat_gateway.eks_igw_1b.id
+  }
+
+  # estou fazendo um merge da tag do recurso com as definidas no locals.tf
+  tags = merge(
+
+    local.tags,
+
+    {
+
+      Name = "${var.project_name}priv-route-table-1b"
+
+    }
+
+  )
+
+}
