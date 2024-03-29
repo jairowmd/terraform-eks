@@ -17,7 +17,7 @@ resource "aws_subnet" "eks_subnet_public_1a" {
 
     {
 
-      Name                    = "cursodevops-subnet-1a",
+      Name                    = "cursodevops-pub-subnet-1a",
       "kubernets.io/role/elb" = 1
 
     }
@@ -45,7 +45,7 @@ resource "aws_subnet" "eks_subnet_public_1b" {
 
     {
 
-      Name                    = "cursodevops-subnet-1b",
+      Name                    = "cursodevops-pub-subnet-1b",
       "kubernets.io/role/elb" = 1
 
     }
