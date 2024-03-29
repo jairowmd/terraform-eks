@@ -8,9 +8,17 @@ resource "aws_vpc" "eks_vpc" {
   # habilita suporte a hostnames no DNS da vpc
   enable_dns_hostnames = true
 
-  tags = {
+  # estou fazendo um merge da tag do recurso com as definidas no locals.tf
+  tags = merge(
 
-    Name = "cursodevops-vpc"
+    local.tags,
 
-  }
+    {
+
+      Name = "cursodevops-vpc"
+
+    }
+
+  )
+
 }

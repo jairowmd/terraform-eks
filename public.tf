@@ -8,11 +8,24 @@ resource "aws_subnet" "eks_subnet_public_1a" {
   availability_zone       = "${data.aws_region.current.name}a"
   map_public_ip_on_launch = true
 
-  tags = {
-    Name                    = "cursodevops-subnet-1a",
-    "kubernets.io/role/elb" = 1
-  }
+
+
+  # estou fazendo um merge da tag do recurso com as definidas no locals.tf
+  tags = merge(
+
+    local.tags,
+
+    {
+
+      Name                    = "cursodevops-subnet-1a",
+      "kubernets.io/role/elb" = 1
+
+    }
+
+  )
+
 }
+
 
 
 
@@ -25,8 +38,17 @@ resource "aws_subnet" "eks_subnet_public_1b" {
   availability_zone       = "${data.aws_region.current.name}b"
   map_public_ip_on_launch = true
 
-  tags = {
-    Name                    = "cursodevops-subnet-1b"
-    "kubernets.io/role/elb" = 1
-  }
+  # estou fazendo um merge da tag do recurso com as definidas no locals.tf
+  tags = merge(
+
+    local.tags,
+
+    {
+
+      Name                    = "cursodevops-subnet-1b",
+      "kubernets.io/role/elb" = 1
+
+    }
+
+  )
 }
