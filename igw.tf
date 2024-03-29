@@ -2,7 +2,7 @@
 resource "aws_internet_gateway" "eks_igw" {
   vpc_id = aws_vpc.eks_vpc.id
 
- # estou fazendo um merge da tag do recurso com as definidas no locals.tf
+  # estou fazendo um merge da tag do recurso com as definidas no locals.tf
   tags = merge(
 
     local.tags,
