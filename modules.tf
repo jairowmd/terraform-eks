@@ -6,3 +6,12 @@ module "eks_network" {
   tags         = local.tags
 
 }
+
+
+module "eks_cluster" {
+
+  source       = "./module/cluster"
+  project_name = var.project_name
+  tags         = local.tags
+
+}
