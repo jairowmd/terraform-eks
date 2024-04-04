@@ -8,3 +8,8 @@ variable "tags" {
   description = "Tags to be added to AWS resouces (Name tag)"
 
 }
+
+variable "oidc" {
+  type        = string
+  description = "HTTPS URL from OIDC provider of the EKS cluster"
+}
